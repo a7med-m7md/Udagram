@@ -15,21 +15,7 @@ import router from './controllers/routes/imagefilter.route';
   app.use(bodyParser.json());
 
   // @ts-ignore
-  app.get('/filteredimage', async (req: Request, res: Response) => {
-
-    try {
-      // @ts-ignore
-      const { image_url } = req.query;
-      const filtered_image = await filterImageFromURL(image_url);
-      // @ts-ignore
-      return res.status(200).sendFile(filtered_image)
-    } catch (error) {
-      // @ts-ignore
-      return res.status(422).json({
-        message: 'invalid image url'
-      })
-    }
-  })
+  app.use('/filteredimage', route)
   //    1
   //    1. validate the image_url query
   //    2. call filterImageFromURL(image_url) to filter the image
