@@ -15,7 +15,7 @@ import router from './controllers/routes/imagefilter.route';
   app.use(bodyParser.json());
 
   // @ts-ignore
-  app.use('/filteredimage', async (req: Request, res: Response) => {
+  app.get('/filteredimage', async (req: Request, res: Response) => {
 
     try {
       // @ts-ignore
